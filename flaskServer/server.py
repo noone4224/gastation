@@ -12,31 +12,39 @@ conn_str = "mongodb+srv://nayra1316:rafa123@cluster0.iqyprre.mongodb.net/?retryW
 client = pymongo.MongoClient(conn_str)
 myDB = client["Clients"]
 myCollection = myDB["clients"]
-lista = list(myCollection.find({}))
 
-count = 0
-with open('collection.json', 'w') as file:
-        file.write('{ "clients" : [')
-        for document in lista:
-            count+=1
-            file.write(dumps(document))
-            if count == len(lista):
-                  break;
-            else:
-              file.write(',')
-        file.write(']}')
+def getLista():
+      lista = list(myCollection.find({}))
+      count = 0
+      with open('collection.json', 'w') as file:
+            file.write('{ "clients" : [')
+            for document in lista:
+                  count+=1
+                  file.write(dumps(document))
+                  if count == len(lista):
+                        break;
+                  else:
+                        file.write(',')
+            file.write(']}')
 
 @app.route("/clients")
 
 def clients():
-  x = open('collection.json')
-  data = json.load(x)
-  return data
+      getLista()
+      x = open('collection.json')
+      data = json.load(x)
+      return data
 
 
 @app.route("/sendNotif", methods = ["POST"])
 
 def sendNotif():
+      print(request.json)
+      return 'received'
+
+@app.route("/turnOffGas", methods = ["POST"])
+
+def turnOffGas():
       print(request.json)
       return 'received'
 

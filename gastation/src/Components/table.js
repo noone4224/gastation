@@ -6,7 +6,6 @@ import ControlledSwitches from "./Switches.js"
 function TableValues() {
 
 	const [data, setData] = useState([{}])
-
 	useEffect(() => {
 		fetch("/clients").then(
 			res => res.json()
@@ -38,11 +37,11 @@ return (
 			<td>{val.address}</td>
 			<td>{val.rfc}</td>
 			<td>
-				<ControlledSwitches state= {val.hasGas}/>
+				<ControlledSwitches state= {val.hasGas} address = {val.address} gasNoti = {false}/>
 			</td>
 			<td>{val.paymentDate}</td>
 			<td>
-				<ControlledSwitches state= {val.hasNotifications} number = {val.number}/>
+				<ControlledSwitches state= {val.hasNotifications} number = {val.number} gasNoti = {true}/>
 			</td>
 			</tr>
 		)
