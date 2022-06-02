@@ -1,4 +1,4 @@
-#!/Users/intern/Desktop/ProyectoIntegrador/flaskServer/venv/bin/python3
+#!/home/nayra131613/gastation/flaskServer/venv/bin/python3
 # -*- coding: utf-8 -*-
 import re
 import sys

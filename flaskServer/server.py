@@ -42,6 +42,10 @@ def sendMessage(number):
 
     print(message.sid)
 
+@app.route("/")
+def hello_world():
+    return "hello world"
+
 @app.route("/clients")
 
 def clients():
@@ -65,4 +69,4 @@ def turnOffGas():
     return 'received'
 
 if __name__ == "__main__":
-    app.run(debug=True)
+    app.run(debug = True, host= '0.0.0.0', port=80)
