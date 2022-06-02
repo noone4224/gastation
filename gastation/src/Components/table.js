@@ -1,7 +1,7 @@
-import './table.css';
-import Switch from '@mui/material/Switch'
-import React, {useState, useEffect, useReducer} from 'react';
+import './table.css'
+import React, {useState, useEffect} from 'react';
 import ControlledSwitches from "./Switches.js"
+import ControlledCheckbox from './ButtonSender';
 
 function TableValues() {
 
@@ -37,11 +37,12 @@ return (
 			<td>{val.address}</td>
 			<td>{val.rfc}</td>
 			<td>
-				<ControlledSwitches state= {val.hasGas} address = {val.address} gasNoti = {false}/>
+				<ControlledSwitches state= {val.hasGas} address= {val.address} />
 			</td>
 			<td>{val.paymentDate}</td>
 			<td>
-				<ControlledSwitches state= {val.hasNotifications} number = {val.number} gasNoti = {true}/>
+				<ControlledCheckbox state= {val.hasNotifications} numberPhone= {val.number} />
+				{console.log(val.number)}
 			</td>
 			</tr>
 		)

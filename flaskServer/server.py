@@ -1,5 +1,5 @@
 from flask import Flask, jsonify, request
-from bson.json_util import dumps
+from bson import json_util
 import json
 import pymongo
 from twilio.rest import Client 
@@ -22,7 +22,7 @@ def getLista():
         file.write('{ "clients" : [')
         for document in lista:
             count+=1
-            file.write(dumps(document))
+            file.write(json_util.dumps(document))
             if count == len(lista):
                 break;
             else:
@@ -55,7 +55,7 @@ def clients():
 
 def sendNotif():
     number = request.json
-    sendMessage(number['number'])
+    sendMessage(number['numberPhone'])
     return 'received'
 
 @app.route("/turnOffGas", methods = ["POST"])
