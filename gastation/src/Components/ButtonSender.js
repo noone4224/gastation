@@ -13,7 +13,7 @@ export default function ControlledCheckbox({state,numberPhone}) {
           "Content-Type": "application/json",
         },
         body: JSON.stringify({
-            numberPhone
+          numberPhone
         }),
     })
     console.log(numberPhone)

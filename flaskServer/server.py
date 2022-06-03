@@ -1,5 +1,4 @@
 from flask import Flask, jsonify, request
-from bson import json_util
 import json
 import pymongo
 from twilio.rest import Client 
@@ -14,20 +13,6 @@ conn_str = "mongodb+srv://nayra1316:rafa123@cluster0.iqyprre.mongodb.net/?retryW
 client = pymongo.MongoClient(conn_str)
 myDB = client["Clients"]
 myCollection = myDB["clients"]
-
-def getLista():
-    lista = list(myCollection.find({}))
-    count = 0
-    with open('collection.json', 'w') as file:
-        file.write('{ "clients" : [')
-        for document in lista:
-            count+=1
-            file.write(json_util.dumps(document))
-            if count == len(lista):
-                break;
-            else:
-                file.write(',')
-        file.write(']}')
 
 def sendMessage(number):
     account_sid = os.environ['TWILIO_ACCOUNT_SID']
@@ -45,10 +30,9 @@ def sendMessage(number):
 @app.route("/clients")
 
 def clients():
-    getLista()
-    x = open('collection.json')
-    data = json.load(x)
-    return data
+    lista = list(myCollection.find({},{'_id':0}))
+    res = {'clients': lista}
+    return json.dumps(res)
 
 
 @app.route("/sendNotif", methods = ["POST"])

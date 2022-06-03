@@ -1,1 +1,40 @@
-{ "clients" : [{"_id": {"$oid": "62968079763d7ead1961b912"}, "name": "Nadie", "rfc": "DIMR9801", "hasGas": false, "paymentDate": "12/06/2022", "hasNotifications": false, "number": "5582213992", "address": "Francisco Madero 39"},{"_id": {"$oid": "62968ec84579ebb6e3d3509e"}, "name": "Benjamin", "address": "Juan Escutia", "rfc": "DIMR900121", "hasGas": false, "paymentDate": "12/01/31", "hasNotifications": false, "number": "5547837270"},{"_id": {"$oid": "6296952c18b2b5c85f5ab63a"}, "name": "Erny", "address": "Juan Escutia", "rfc": "DIMR900121", "hasGas": false, "paymentDate": "12/01/31", "hasNotifications": false, "number": "5523008491"},{"_id": {"$oid": "629777ec4c7489a99bcd3452"}, "name": "Rafael", "rfc": "JIMMR9801", "hasGas": false, "paymentDate": "12/06/2022", "hasNotifications": false, "number": "5582213992", "address": "Maria Juarez 9"}]}
+{
+    "clients": [
+        {
+            "name": "Nadie",
+            "rfc": "DIMR9801",
+            "hasGas": false,
+            "paymentDate": "12/06/2022",
+            "hasNotifications": false,
+            "number": "5582213992",
+            "address": "Francisco Madero 39"
+        },
+        {
+            "name": "Benjamin",
+            "address": "Juan Escutia",
+            "rfc": "DIMR900121",
+            "hasGas": false,
+            "paymentDate": "12/01/31",
+            "hasNotifications": false,
+            "number": "5547837270"
+        },
+        {
+            "name": "Erny",
+            "address": "Juan Escutia",
+            "rfc": "DIMR900121",
+            "hasGas": false,
+            "paymentDate": "12/01/31",
+            "hasNotifications": false,
+            "number": "5523008491"
+        },
+        {
+            "name": "Rafael",
+            "rfc": "JIMMR9801",
+            "hasGas": false,
+            "paymentDate": "12/06/2022",
+            "hasNotifications": false,
+            "number": "5582213992",
+            "address": "Maria Juarez 9"
+        }
+    ]
+}
